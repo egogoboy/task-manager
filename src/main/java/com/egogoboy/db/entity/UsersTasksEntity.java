@@ -20,10 +20,9 @@ public class UsersTasksEntity {
 
     @Column
     @JoinColumn(name = "user_id", nullable = false)
-    UserEntity user;
+    private UserEntity user;
 
     @Column
     @JoinColumn(name = "task_id", nullable = false)
-    TaskEntity task;
-
+    private TaskEntity task;
 }
