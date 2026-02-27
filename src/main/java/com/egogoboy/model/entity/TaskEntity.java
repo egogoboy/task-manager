@@ -7,8 +7,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
-import com.egogoboy.my_enum.TaskStatus;
-
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -32,7 +30,7 @@ public class TaskEntity {
     private String description;
 
     @Column
-    private TaskStatus status;
+    private String status;
 
     @Column(name = "start_time")
     private Timestamp startTimestamp;
