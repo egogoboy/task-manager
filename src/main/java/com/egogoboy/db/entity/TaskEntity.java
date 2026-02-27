@@ -20,10 +20,10 @@ import lombok.Setter;
 class TaskEntity {
     @Id
     @GeneratedValue
-    @Column
+    @Column(nullable = false)
     Long id;
 
-    @Column
+    @Column(nullable = false)
     String title;
 
     @Column

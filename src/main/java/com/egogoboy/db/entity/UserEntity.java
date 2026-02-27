@@ -18,15 +18,15 @@ import lombok.Setter;
 class UserEntity {
     @Id
     @GeneratedValue
-    @Column
+    @Column(nullable = false)
     Long id;
 
-    @Column
+    @Column(nullable = false)
     String username;
 
-    @Column
+    @Column(nullable = false)
     String hashPassword;
 
-    @Column
+    @Column(nullable = false)
     String role;
 }
