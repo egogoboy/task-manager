@@ -19,14 +19,14 @@ public class UserEntity {
     @Id
     @GeneratedValue
     @Column(nullable = false)
-    Long id;
+    private Long id;
 
     @Column(nullable = false)
-    String username;
+    private String username;
 
     @Column(nullable = false)
-    String hashPassword;
+    private String hashPassword;
 
     @Column(nullable = false)
-    String role;
+    private String role;
 }

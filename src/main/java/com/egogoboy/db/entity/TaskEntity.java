@@ -21,17 +21,17 @@ public class TaskEntity {
     @Id
     @GeneratedValue
     @Column(nullable = false)
-    Long id;
+    private Long id;
 
     @Column(nullable = false)
-    String title;
+    private String title;
 
     @Column
-    String description;
+    private String description;
 
     @Column(name = "start_time")
-    Timestamp startTimestamp;
+    private Timestamp startTimestamp;
 
     @Column(name = "end_time")
-    Timestamp endTimestamp;
+    private Timestamp endTimestamp;
 }
