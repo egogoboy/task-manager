@@ -21,8 +21,8 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
-@Table(name = "users_tasks")
-public class UsersTasksEntity {
+@Table(name = "tasks_assignment")
+public class TaskAssignmentEntity {
 
     @EmbeddedId
     Long id;
