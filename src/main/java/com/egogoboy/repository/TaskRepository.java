@@ -13,14 +13,14 @@ import com.egogoboy.model.entity.TaskEntity;
 
 @ApplicationScoped
 public class TaskRepository {
-    EntityManager entityManager;
+    private EntityManager entityManager;
 
     @Inject
-    TaskRepository(EntityManager entityManager) {
+    public TaskRepository(EntityManager entityManager) {
         this.entityManager = entityManager;
     }
 
-    TaskEntity findById(Long id) {
+    public TaskEntity findById(Long id) {
         if (id == null) {
             return null;
         }
@@ -30,7 +30,7 @@ public class TaskRepository {
         return task;
     }
 
-    List<TaskEntity> findAll() {
+    public List<TaskEntity> findAll() {
         TypedQuery<TaskEntity> query = entityManager.createQuery(
                 "SELECT e FROM TaskEntity e",
                 TaskEntity.class);
@@ -39,7 +39,7 @@ public class TaskRepository {
     }
 
     @Transactional
-    void save(TaskEntity task) {
+    public void save(TaskEntity task) {
         if (task.getId() == null) {
             entityManager.persist(task);
         } else {
@@ -50,7 +50,7 @@ public class TaskRepository {
     }
 
     @Transactional
-    void deleteById(Long id) {
+    public void deleteById(Long id) {
         TaskEntity entity = findById(id);
         if (entity != null) {
             entityManager.remove(entity);

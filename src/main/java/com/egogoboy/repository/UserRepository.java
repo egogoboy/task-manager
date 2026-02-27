@@ -13,14 +13,14 @@ import com.egogoboy.model.entity.UserEntity;
 
 @ApplicationScoped
 public class UserRepository {
-    EntityManager entityManager;
+    private EntityManager entityManager;
 
     @Inject
-    UserRepository(EntityManager entityManager) {
+    public UserRepository(EntityManager entityManager) {
         this.entityManager = entityManager;
     }
 
-    UserEntity findById(Long id) {
+    public UserEntity findById(Long id) {
         if (id == null) {
             return null;
         }
@@ -30,7 +30,7 @@ public class UserRepository {
         return user;
     }
 
-    List<UserEntity> findAll() {
+    public List<UserEntity> findAll() {
         TypedQuery<UserEntity> query = entityManager.createQuery(
                 "SELECT e FROM UserEntity e",
                 UserEntity.class);
@@ -39,7 +39,7 @@ public class UserRepository {
     }
 
     @Transactional
-    void save(UserEntity user) {
+    public void save(UserEntity user) {
         if (user.getId() == null) {
             entityManager.persist(user);
         } else {
@@ -50,7 +50,7 @@ public class UserRepository {
     }
 
     @Transactional
-    void deleteById(Long id) {
+    public void deleteById(Long id) {
         UserEntity entity = findById(id);
         if (entity != null) {
             entityManager.remove(entity);

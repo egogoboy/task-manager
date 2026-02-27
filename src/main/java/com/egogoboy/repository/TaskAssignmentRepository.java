@@ -12,15 +12,15 @@ import javax.transaction.Transactional;
 import com.egogoboy.model.entity.TaskAssignmentEntity;
 
 @ApplicationScoped
-class TaskAssignmentRepository {
-    EntityManager entityManager;
+public class TaskAssignmentRepository {
+    private EntityManager entityManager;
 
     @Inject
-    TaskAssignmentRepository(EntityManager entityManager) {
+    public TaskAssignmentRepository(EntityManager entityManager) {
         this.entityManager = entityManager;
     }
 
-    TaskAssignmentEntity findById(Long id) {
+    public TaskAssignmentEntity findById(Long id) {
         if (id == null) {
             return null;
         }
@@ -30,7 +30,7 @@ class TaskAssignmentRepository {
         return taskAssignment;
     }
 
-    List<TaskAssignmentEntity> findByUserId(Long user_id) {
+    public List<TaskAssignmentEntity> findByUserId(Long user_id) {
         if (user_id == null) {
             return null;
         }
@@ -42,7 +42,7 @@ class TaskAssignmentRepository {
         return query.getResultList();
     }
 
-    List<TaskAssignmentEntity> findByTaskId(Long task_id) {
+    public List<TaskAssignmentEntity> findByTaskId(Long task_id) {
         if (task_id == null) {
             return null;
         }
@@ -54,7 +54,7 @@ class TaskAssignmentRepository {
         return query.getResultList();
     }
 
-    List<TaskAssignmentEntity> findAll() {
+    public List<TaskAssignmentEntity> findAll() {
         TypedQuery<TaskAssignmentEntity> query = entityManager.createQuery(
                 "SELECT e FROM TaskAssignmentEntity e",
                 TaskAssignmentEntity.class);
@@ -63,7 +63,7 @@ class TaskAssignmentRepository {
     }
 
     @Transactional
-    void save(TaskAssignmentEntity taskAssignment) {
+    public void save(TaskAssignmentEntity taskAssignment) {
         if (taskAssignment.getId() == null) {
             entityManager.persist(taskAssignment);
         } else {
@@ -74,7 +74,7 @@ class TaskAssignmentRepository {
     }
 
     @Transactional
-    void deleteById(Long id) {
+    public void deleteById(Long id) {
         TaskAssignmentEntity entity = findById(id);
         if (entity != null) {
             entityManager.remove(entity);
