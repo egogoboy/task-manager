@@ -1,5 +1,7 @@
 package com.egogoboy.db.entity;
 
+import java.sql.Timestamp;
+
 import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
@@ -35,4 +37,7 @@ public class UsersTasksEntity {
 
     @Column
     private AssignmentStatus status;
+
+    @Column
+    private Timestamp assignedAt;
 }
