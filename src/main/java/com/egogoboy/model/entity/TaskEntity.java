@@ -1,4 +1,4 @@
-package com.egogoboy.db.entity;
+package com.egogoboy.model.entity;
 
 import java.sql.Timestamp;
 

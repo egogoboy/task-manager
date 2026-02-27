@@ -1,4 +1,4 @@
-package com.egogoboy.db.entity;
+package com.egogoboy.model.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

@@ -9,7 +9,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 import javax.transaction.Transactional;
 
-import com.egogoboy.db.entity.TaskEntity;
+import com.egogoboy.model.entity.TaskEntity;
 
 @ApplicationScoped
 public class TaskRepository {

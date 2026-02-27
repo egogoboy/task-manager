@@ -9,7 +9,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 import javax.transaction.Transactional;
 
-import com.egogoboy.db.entity.UserEntity;
+import com.egogoboy.model.entity.UserEntity;
 
 @ApplicationScoped
 public class UserRepository {
