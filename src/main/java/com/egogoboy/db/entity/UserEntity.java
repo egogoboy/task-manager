@@ -15,7 +15,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
-class UserEntity {
+public class UserEntity {
     @Id
     @GeneratedValue
     @Column(nullable = false)

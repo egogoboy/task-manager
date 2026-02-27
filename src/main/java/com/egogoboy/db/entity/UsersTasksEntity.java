@@ -16,7 +16,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Table(name = "users_tasks")
-class UsersTasksEntity {
+public class UsersTasksEntity {
 
     @Column
     @JoinColumn(name = "user_id", nullable = false)

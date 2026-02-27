@@ -17,7 +17,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
-class TaskEntity {
+public class TaskEntity {
     @Id
     @GeneratedValue
     @Column(nullable = false)
