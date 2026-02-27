@@ -1,4 +1,4 @@
-package com.egogoboy.my_enum;
+package com.egogoboy.domain.enums;
 
 public enum UserRole {
     ADMIN,
