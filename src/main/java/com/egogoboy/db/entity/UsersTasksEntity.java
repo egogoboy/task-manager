@@ -1,9 +1,13 @@
 package com.egogoboy.db.entity;
 
 import javax.persistence.Column;
+import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
+import com.egogoboy.my_enum.AssignmentStatus;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -18,11 +22,17 @@ import lombok.Setter;
 @Table(name = "users_tasks")
 public class UsersTasksEntity {
 
-    @Column
+    @EmbeddedId
+    Long id;
+
+    @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
     private UserEntity user;
 
-    @Column
+    @ManyToOne
     @JoinColumn(name = "task_id", nullable = false)
     private TaskEntity task;
+
+    @Column
+    private AssignmentStatus status;
 }
