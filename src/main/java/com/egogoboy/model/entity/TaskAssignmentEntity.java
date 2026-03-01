@@ -1,13 +1,18 @@
 package com.egogoboy.model.entity;
 
-import java.sql.Timestamp;
+import java.time.LocalDateTime;
 
 import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.MapsId;
 import javax.persistence.Table;
+
+import com.egogoboy.model.enums.AssignmentStatus;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -23,19 +28,22 @@ import lombok.Setter;
 public class TaskAssignmentEntity {
 
     @EmbeddedId
-    Long id;
+    private TaskAssignmentId id;
 
     @ManyToOne
+    @MapsId("userId")
     @JoinColumn(name = "user_id", nullable = false)
     private UserEntity user;
 
     @ManyToOne
+    @MapsId("taskId")
     @JoinColumn(name = "task_id", nullable = false)
     private TaskEntity task;
 
+    @Enumerated(EnumType.STRING)
     @Column
-    private String status;
+    private AssignmentStatus status;
 
     @Column
-    private Timestamp assignedAt;
+    private LocalDateTime assignedAt;
 }
