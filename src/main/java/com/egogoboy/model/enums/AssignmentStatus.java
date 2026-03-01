@@ -1,4 +1,4 @@
-package com.egogoboy.domain.enums;
+package com.egogoboy.model.enums;
 
 public enum AssignmentStatus {
     ASSIGNED,
