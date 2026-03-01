@@ -1,11 +1,15 @@
 package com.egogoboy.model.entity;
 
-import java.sql.Timestamp;
+import java.time.LocalDateTime;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+
+import com.egogoboy.model.enums.TaskStatus;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -29,12 +33,13 @@ public class TaskEntity {
     @Column
     private String description;
 
+    @Enumerated(EnumType.STRING)
     @Column
-    private String status;
+    private TaskStatus status;
 
     @Column(name = "start_time")
-    private Timestamp startTimestamp;
+    private LocalDateTime startTimestamp;
 
     @Column(name = "end_time")
-    private Timestamp endTimestamp;
+    private LocalDateTime endTimestamp;
 }

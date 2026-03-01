@@ -2,8 +2,12 @@ package com.egogoboy.model.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+
+import com.egogoboy.model.enums.UserRole;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -27,6 +31,7 @@ public class UserEntity {
     @Column(nullable = false)
     private String hashPassword;
 
+    @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private String role;
+    private UserRole role;
 }
